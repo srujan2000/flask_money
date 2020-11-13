@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+   <div class="row mb-5">
+       <div class="col-md-6">
+           <div class="card" style="width: 400px;">
+            <div class="card-header text-center">
+               <a href="{{url_for('recieved')}}" style="text-decoration: none;"> Total Amount Recieved </a>
+            </div>
+            <div class="card-body">
+                <h1 class="text-center">₹{{total_rec}}</h1>
+            </div>
+           </div>
+       </div>
+       <div class="col-md-6">
+        <div class="card" style="width: 400px;">
+         <div class="card-header text-center">
+            <a href="{{url_for('spent')}}" style="text-decoration: none;"> Total Amount Spent </a>
+         </div>
+         <div class="card-body">
+             <h1 class="text-center">₹{{total_spec}}</h1>
+         </div>
+        </div>
+    </div>
+   </div>
+
+        <div class="card card-balance" style="width: 400px; margin-left: 300px;">
+            <div class="card-header text-center">
+               Total Balance
+            </div>
+            <div class="card-body">
+                <h1 class="text-center">₹{{total}}</h1>
+            </div>
+           </div>
+     
+{% endblock content %}

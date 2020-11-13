@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 class="text-center mb-5">Amount Spent </h1>
+{% for spec in spent %}
+        <div class="card card-balance" style="width: 400px; margin-left: 350px; margin-bottom: 10px;">
+            <div class="card-header">
+            <a href="{{url_for('check_spent',spec_id=spec.id)}}" style="text-decoration: none;"><h4 class="text-center">{{spec.date}}</h4></a>
+            </div>
+            <div class="card-body">
+                <h1 class="mb-3 text-center">₹{{spec.amount}}</h1>
+                <p style="margin-left: 100px;">Where :{{spec.wher}}  <p>
+            </div>
+            <div class="card-footer">
+               Spent on : {{spec.pur}}
+            </div>
+           </div>
+     
+{% endfor %}
+
+     
+{% endblock content %}

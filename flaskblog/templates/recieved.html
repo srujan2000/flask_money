@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 class="text-center mb-5">Amount Recieved </h1>
+{% for rec in rec %}
+        <div class="card card-balance" style="width: 400px; margin-left: 350px;margin-bottom: 40px;">
+            <div class="card-header">
+            <a href="{{url_for('check_rec',rec_id=rec.id)}}" style="text-decoration: none;"><h4 class="text-center">{{rec.date}}</h4></a>
+            </div>
+            <div class="card-body">
+                <h1 class="mb-3 text-center">₹{{rec.amount}}</h1>
+                <p style="margin-left: 100px;">From : {{rec.fro}} <p>
+            </div>
+            <div class="card-footer">
+               Reason : {{rec.reason}}
+            </div>
+           </div>
+        </hr>
+
+           {% endfor %}
+{% endblock content %}
+
+
